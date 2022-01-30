@@ -46,7 +46,7 @@ async function createOwnEvent(req, res, next) {
       return next(new ErrorResponse('User not found', 404));
     }
 
-    // event.ownerId = req.userId;
+    event.ownerId = req.userId;
 
     const newEvent = await Event.create(event);
     res.status(201).json({
@@ -62,6 +62,8 @@ async function createOwnEvent(req, res, next) {
 async function createEvent(req, res, next) {
   try {
     const event = req.body;
+
+    event.ownerId = '61f6e2c3f41891e7106854b8';
 
     const newEvent = await Event.create(event);
     res.status(201).json({
