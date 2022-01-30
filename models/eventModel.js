@@ -5,6 +5,10 @@ const eventSchema = new mongoose.Schema({
     type: String,
     required: [true, 'Please enter an event title'],
   },
+  description: {
+    type: String,
+    required: false,
+  },
   location: {
     type: String,
     required: false,
@@ -13,9 +17,9 @@ const eventSchema = new mongoose.Schema({
     type: Date,
     required: [true, 'Please enter a date'],
   },
-  description: {
+  guest: {
     type: String,
-    required: false,
+    required: [true, 'Please tell us who you are...'],
   },
   email: {
     type: String,
