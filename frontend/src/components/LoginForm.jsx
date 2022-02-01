@@ -51,7 +51,8 @@ const InputWrapper = styled.div`
   }
 
   & input {
-    width: 100%;
+    width: 90%;
+    margin: 0 auto;
     padding: 0.5rem 1rem;
     border-radius: 0.5rem;
     border: 1px solid #ddd;
