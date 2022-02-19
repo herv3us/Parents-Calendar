@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
+import { login } from '../../services/authService';
 
 function LoginForm() {
   const [username, setUsername] = useState('');
@@ -15,6 +16,17 @@ function LoginForm() {
     } else if (!password) {
       setErrorMessage('Please fill in your password');
     }
+
+    const data = await login(username, password);
+
+    if (!data) {
+      console.log('Nope, sorry');
+    } else {
+      console.log('Ja, detta är datan, ', data);
+    }
+
+    setUsername('');
+    setPassword('');
   };
 
   return (

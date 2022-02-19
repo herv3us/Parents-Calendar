@@ -2,6 +2,7 @@ const User = require('../models/userModel');
 const ErrorResponse = require('../utilites/errorRes');
 
 async function login(req, res, next) {
+  console.log('in backend');
   try {
     const { username, password } = req.body;
 
@@ -26,7 +27,9 @@ async function login(req, res, next) {
       user: user,
       token: user.getToken(),
     });
-  } catch (err) {}
+  } catch (err) {
+    console.log(err);
+  }
 }
 
 module.exports = { login };
