@@ -9,6 +9,7 @@ export const login = async (username, password) => {
       body: JSON.stringify({ username, password }),
     });
     const data = await res.json();
+    console.log(data);
     return data;
   } catch (err) {
     console.log(err);

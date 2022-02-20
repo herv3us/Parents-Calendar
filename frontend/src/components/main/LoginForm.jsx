@@ -21,6 +21,7 @@ function LoginForm() {
 
     if (!data) {
       console.log('Nope, sorry');
+      console.log(data);
     } else {
       console.log('Ja, detta är datan, ', data);
     }
