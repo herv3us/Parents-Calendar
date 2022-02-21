@@ -52,30 +52,32 @@ function SuggestEvent() {
 export default SuggestEvent;
 
 const Form = styled.form`
+  border-radius: 1rem;
+  border: 1px solid #ddd;
   max-width: 350px;
   margin: 0 auto;
-  border: 1px solid #ddd;
-  border-radius: 1rem;
   padding: 1rem;
 `;
 
 const InputWrapper = styled.div`
   margin-bottom: 1rem;
   width: 90%;
+
   & label {
     display: block;
     margin-bottom: 0.5rem;
   }
+
   & input,
   & textarea,
   & select {
-    width: 100%;
-    padding: 0.5rem 1rem;
+    font: inherit;
     border-radius: 0.5rem;
     border: 1px solid #ddd;
     outline: none;
-    font: inherit;
-    resize: none;
+    padding: 0.5rem 1rem;
+    width: 100%;
+    /* resize: none; */
 
     &:focus {
       outline: 2px dotted #5b5b5b;
