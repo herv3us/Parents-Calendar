@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import styled from 'styled-components';
 import { login } from '../../services/authService';
+import { COLORS } from '../../styles/constants';
+import styled from 'styled-components';
 
 function LoginForm() {
   const [username, setUsername] = useState('');
@@ -66,7 +67,7 @@ const Form = styled.form`
   flex-direction: column;
   width: 400px;
   margin: 0 auto;
-  border: 1px solid #ddd;
+  border: 1px solid ${COLORS.mediumgrey};
   border-radius: 1rem;
   padding: 2rem;
 
@@ -78,7 +79,7 @@ const Form = styled.form`
 const Heading = styled.h1`
   width: fit-content;
   margin: 0 auto;
-  background-color: white;
+  background-color: ${COLORS.backgroundForm};
   margin-top: -3.5rem;
   padding: 0 0.5rem;
 `;

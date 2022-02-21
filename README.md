@@ -7,7 +7,7 @@ So, a calendar for them, where they can see all their planed events and at the s
 
 # Links 🏄🏼‍♀️
 
-[GitHub repo](https://github.com/herv3us/Parents-Calendar)
+📄 [GitHub repo](https://github.com/herv3us/Parents-Calendar)
 
 # Getting started with the app 💻
 
@@ -52,6 +52,8 @@ So, a calendar for them, where they can see all their planed events and at the s
 
 Thanks for looking at my application! Do you have any questions about this project or want to to work on a project together... or just want to chat about code for a bit, don't hasitate to contact me.
 
-[GitHub Profile](https://github.com/herv3us)
+👩🏼‍💻 [GitHub Profile](https://github.com/herv3us)
 
-[LinkedIn](www.linkedin.com/in/sofiaherveus)
+👩🏼 [LinkedIn](www.linkedin.com/in/sofiaherveus)
+
+Lots of Love 💞 // Sofia Herv3us
