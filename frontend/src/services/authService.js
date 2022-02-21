@@ -1,5 +1,4 @@
 export const login = async (username, password) => {
-  console.log(username, password);
   try {
     const res = await fetch('/api/login', {
       method: 'POST',
@@ -9,7 +8,6 @@ export const login = async (username, password) => {
       body: JSON.stringify({ username, password }),
     });
     const data = await res.json();
-    console.log(data);
     return data;
   } catch (err) {
     console.log(err);

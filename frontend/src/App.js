@@ -1,22 +1,27 @@
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Header from './components/header/Header';
-import LoginForm from './components/main/LoginForm';
 import styled from 'styled-components';
+import HomePage from './pages/HomePage';
 import Footer from './components/footer/Footer';
 
 function App() {
   return (
-    <StyledApp className="App">
-      <Header />
-      <LoginForm />
-      <Footer />
-    </StyledApp>
+    <BrowserRouter>
+      <Wrapper className="App">
+        <Header />
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+        </Routes>
+        <Footer />
+      </Wrapper>
+    </BrowserRouter>
   );
 }
 
 export default App;
 
-const StyledApp = styled.div`
+const Wrapper = styled.div`
   display: grid;
   grid-template-rows: auto 1fr auto;
-  height: 100vh;
+  min-height: 100vh;
 `;
