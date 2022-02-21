@@ -4,6 +4,7 @@ import SuggestEvent from '../components/main/SuggestEvent';
 
 function HomePage() {
   const [isOpenLogin, setIsOpenLogin] = useState(false);
+  const [isOpenSuggestion, setIsOpenSuggestion] = useState(false);
 
   return (
     <div>

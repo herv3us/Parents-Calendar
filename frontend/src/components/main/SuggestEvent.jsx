@@ -73,7 +73,7 @@ function SuggestEvent() {
           <label htmlFor="event">Event</label>
           <input
             type="text"
-            placeholder="Event"
+            placeholder="Event title"
             id="event"
             value={title}
             onChange={(e) => setTitle(e.target.value)}
@@ -88,7 +88,7 @@ function SuggestEvent() {
             id="description"
             cols="20"
             rows="3"
-            placeholder="Please describe your suggestion..."
+            placeholder="Describe your event-suggestion..."
             value={description}
             onChange={(e) => setDescription(e.target.value)}
           ></textarea>
@@ -144,11 +144,11 @@ function SuggestEvent() {
           </DateWrapper>
         </InputWrapper>
         <InputWrapper>
-          <label htmlFor="guest">Guests</label>
+          <label htmlFor="guest">Name</label>
           <input
             type="text"
             id="guest"
-            placeholder="Who are we doing this with?"
+            placeholder="Tell us who you are"
             value={guest}
             onChange={(e) => setGuest(e.target.value)}
             onBlur={onBlurGuestHandler}
