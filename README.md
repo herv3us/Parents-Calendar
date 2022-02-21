@@ -5,11 +5,11 @@ As a friend or family to my parents, you are suppouse to have the ability to sen
 
 So, a calendar for them, where they can see all their planed events and at the same time able to take requests from others right in to their calendar...
 
-# Links 🔗
+# Links 🏄🏼‍♀️
 
 [GitHub repo](https://github.com/herv3us/Parents-Calendar)
 
-# Getting started with the app
+# Getting started with the app 💻
 
 1. Fork or download the code to your computer
 
@@ -26,7 +26,7 @@ So, a calendar for them, where they can see all their planed events and at the s
 - MONGODB_URI --> an url to your mongoDB Atlas cluster
 - JWT_SECRET --> a secret to decode json web token
 
-# User Stories
+# User Stories 👻👽👼🏼
 
 1. As the owner of the calendar, I want the ability to login to my calendar and see upcoming events.
 
@@ -48,9 +48,10 @@ So, a calendar for them, where they can see all their planed events and at the s
 
 10.
 
-# Hope you liked it
+# Hope you liked it 💞
 
 Thanks for looking at my application! Do you have any questions about this project or want to to work on a project together... or just want to chat about code for a bit, don't hasitate to contact me.
 
 [GitHub Profile](https://github.com/herv3us)
+
 [LinkedIn](www.linkedin.com/in/sofiaherveus)
