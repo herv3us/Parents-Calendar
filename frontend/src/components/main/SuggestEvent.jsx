@@ -17,9 +17,58 @@ function SuggestEvent() {
   const [guest, setGuest] = useState('');
   const [email, setEmail] = useState('');
 
+  const [, setTitleIsVisited] = useState(false);
+  const [titleIsValid, setTitleIsValid] = useState(false);
+  const [titleMessage, setTitleMessage] = useState('');
+
+  const onBlurTitleHandler = () => {
+    const [isValid, message] = isValidTitle(title);
+    setTitleIsVisited(true);
+    setTitleIsValid(isValid);
+    setTitleMessage(message);
+  };
+
+  const [, setGuestIsVisited] = useState(false);
+  const [guestIsValid, setGuestIsValid] = useState(false);
+  const [guestMessage, setGuestMessage] = useState('');
+
+  const onBlurGuestHandler = () => {
+    const [isValid, message] = isValidGuest(guest);
+    setGuestIsVisited(true);
+    setGuestIsValid(isValid);
+    setGuestMessage(message);
+  };
+
+  const [, setEmailIsVisited] = useState(false);
+  const [emailIsValid, setEmailIsValid] = useState(false);
+  const [emailMessage, setEmailMessage] = useState('');
+
+  const onBlurEmailHandler = () => {
+    const [isValid, message] = isValidEmail(email);
+    setEmailIsVisited(true);
+    setEmailIsValid(isValid);
+    setEmailMessage(message);
+  };
+
+  const validForm = titleIsValid && guestIsValid && emailIsValid;
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    console.log(
+      title,
+      description,
+      location,
+      startDate,
+      startTime,
+      guest,
+      email
+    );
+  };
+
   return (
     <div>
-      <Form>
+      <Form onSubmit={handleSubmit}>
         <InputWrapper>
           <label htmlFor="event">Event</label>
           <input
@@ -28,7 +77,9 @@ function SuggestEvent() {
             id="event"
             value={title}
             onChange={(e) => setTitle(e.target.value)}
+            onBlur={onBlurTitleHandler}
           />
+          {titleMessage ? <p>{titleMessage}</p> : null}
         </InputWrapper>
         <InputWrapper>
           <label htmlFor="description">Description</label>
@@ -100,7 +151,9 @@ function SuggestEvent() {
             placeholder="Who are we doing this with?"
             value={guest}
             onChange={(e) => setGuest(e.target.value)}
+            onBlur={onBlurGuestHandler}
           />
+          {guestMessage ? <p>{guestMessage}</p> : null}
         </InputWrapper>
         <InputWrapper>
           <label htmlFor="email">Email</label>
@@ -109,9 +162,11 @@ function SuggestEvent() {
             placeholder="Your email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
+            onBlur={onBlurEmailHandler}
           />
+          {emailMessage ? emailMessage : null}
         </InputWrapper>
-        <Button>Send eventrequest</Button>
+        <Button disabled={!validForm}>Send eventrequest</Button>
       </Form>
     </div>
   );
@@ -161,9 +216,14 @@ const InputWrapper = styled.div`
       outline-offset: 4px;
     }
   }
+
+  p {
+    margin-top: 0.4rem;
+  }
 `;
 
 const Button = styled.button`
+  background-color: ${COLORS.lightgrey};
   cursor: pointer;
   border-radius: 0.5rem;
   border: none;
@@ -181,4 +241,38 @@ const Button = styled.button`
     outline: 2px dashed ${COLORS.considerd};
     outline-offset: 4px;
   }
+
+  &:disabled {
+    cursor: default;
+
+    &:hover {
+      background-color: ${COLORS.lightgrey};
+    }
+  }
 `;
+
+const isValidTitle = (title) => {
+  if (title.length < 3) {
+    return [false, '❌ Set a title for the event'];
+  } else {
+    return [true, ''];
+  }
+};
+
+const isValidGuest = (guest) => {
+  if (guest.length <= 2) {
+    return [false, '❌ Please tell us who you are'];
+  } else {
+    return [true, ''];
+  }
+};
+
+const isValidEmail = (email) => {
+  if (email.length <= 2) {
+    return [false, '❌ Enter your email'];
+  } else if (!email.includes('@') || !email.includes('.')) {
+    return [false, '❌ Enter a valid email'];
+  } else {
+    return [true, ''];
+  }
+};
