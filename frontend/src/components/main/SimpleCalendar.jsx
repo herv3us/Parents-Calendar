@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { COLORS } from '../../styles/constants';
 
 function SimpleCalendar() {
@@ -73,7 +73,11 @@ function SimpleCalendar() {
           .fill(null)
           .map((_, index) => {
             const d = index - (startDay - 2);
-            return <Day key={index}>{d > 0 ? d : ''}</Day>;
+            return (
+              <Day key={index} isToday={d === today.getDate()}>
+                {d > 0 ? d : ''}
+              </Day>
+            );
           })}
       </Body>
     </CalendarFrame>
@@ -87,7 +91,7 @@ const CalendarFrame = styled.div`
   border: 1px solid ${COLORS.lightgrey};
   border-radius: 3px;
   box-shadow: 2px 2px 2px ${COLORS.lightgrey};
-  margin: 0 auto;
+  margin: 2rem auto;
 `;
 
 const Header = styled.div`
@@ -122,4 +126,17 @@ const Day = styled.div`
   flex-direction: row;
   justify-content: center;
   align-items: center;
+
+  ${(props) =>
+    props.isToday &&
+    css`
+      border: 1px solid ${COLORS.backgroundBG};
+      border-radius: 5px;
+    `}
+
+  ${(props) =>
+    props.isBooked &&
+    css`
+      background-color: ${COLORS.booked};
+    `}
 `;
