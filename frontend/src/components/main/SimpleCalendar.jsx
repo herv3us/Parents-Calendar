@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import styled, { css } from 'styled-components';
+import { getAllEvents } from '../../services/eventService';
 import { COLORS } from '../../styles/constants';
 
 function SimpleCalendar() {
@@ -49,6 +50,18 @@ function SimpleCalendar() {
     setYear(date.getFullYear());
     setstartDay(getStartDayOfTheMonth(date));
   }, [date]);
+
+  const [events, setEvents] = useState([]);
+
+  const getEvents = async () => {
+    const foundEvents = await getAllEvents();
+    setEvents(foundEvents.events);
+    console.log(events);
+  };
+
+  useEffect(() => {
+    getEvents();
+  }, []);
 
   return (
     <CalendarFrame>

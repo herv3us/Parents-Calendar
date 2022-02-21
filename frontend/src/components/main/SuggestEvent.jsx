@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { COLORS } from '../../styles/constants';
 import styled from 'styled-components';
+import { useNavigate } from 'react-router-dom';
+import { createEvent } from '../../services/eventService';
 
 function SuggestEvent() {
   const [title, setTitle] = useState('');
@@ -52,7 +54,7 @@ function SuggestEvent() {
 
   const validForm = titleIsValid && guestIsValid && emailIsValid;
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     console.log(
@@ -64,6 +66,25 @@ function SuggestEvent() {
       guest,
       email
     );
+
+    const eventObj = {
+      event: title,
+      description,
+      location,
+      startDate,
+      startTime,
+      endDate,
+      endTime,
+      guest,
+      email,
+    };
+
+    const newEvent = await createEvent(eventObj);
+
+    if (newEvent.success) {
+      console.log(newEvent);
+      window.location.reload();
+    }
   };
 
   return (
