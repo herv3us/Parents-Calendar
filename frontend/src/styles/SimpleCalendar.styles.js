@@ -4,7 +4,8 @@ import { COLORS } from './constants';
 export const CalendarFrame = styled.div`
   width: 350px;
   border: 1px solid ${COLORS.lightgrey};
-  border-radius: 3px;
+  border-radius: 1rem;
+  overflow: hidden;
   box-shadow: 2px 2px 2px ${COLORS.lightgrey};
   margin: 2rem auto;
 `;

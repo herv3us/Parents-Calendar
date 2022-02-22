@@ -2,7 +2,11 @@ import React from 'react';
 import styled from 'styled-components';
 
 function Footer() {
-  return <StyledFooter>2022 &copy; Sofia Hervéus </StyledFooter>;
+  return (
+    <StyledFooter>
+      <small>2022 &copy; Sofia Hervéus</small>
+    </StyledFooter>
+  );
 }
 
 export default Footer;
