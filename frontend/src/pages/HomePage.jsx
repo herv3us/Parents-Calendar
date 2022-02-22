@@ -17,7 +17,7 @@ function HomePage() {
       setButtonText('Suggest new event');
     } else if (!isOpenSuggestion) {
       setIsOpenSuggestion(true);
-      setButtonText('Close form');
+      setButtonText('Back to calendar');
     }
   };
 

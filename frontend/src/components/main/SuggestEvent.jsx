@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
+import { createEvent } from '../../services/eventService';
 import { COLORS } from '../../styles/constants';
 import styled from 'styled-components';
-import { useNavigate } from 'react-router-dom';
-import { createEvent } from '../../services/eventService';
 
 function SuggestEvent() {
   const [title, setTitle] = useState('');
@@ -209,7 +208,7 @@ const Form = styled.form`
   border-radius: 1rem;
   border: 1px solid ${COLORS.mediumgrey};
   max-width: 350px;
-  margin: 0 auto;
+  margin: 10px auto;
   padding: 0.6rem;
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
 `;
